@@ -6,11 +6,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { PopoverController } from 'ionic-angular';
+
+import { RegisterPage } from '../pages/register/register';
+import { LogInPage } from '../pages/log-in/log-in';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    RegisterPage,
+    LogInPage,
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -19,7 +28,10 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    RegisterPage,
+    LogInPage,
+
   ],
   providers: [
     StatusBar,

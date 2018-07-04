@@ -1,14 +1,71 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary" >
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  
+       
+  <div class="card" >
+      <label ion-label class="label" >Add Employee Details</label>
+    
+      <ion-list>
+         
+          <ion-item class="background1" >
+              <ion-input type="text" placeholder="Enter Employee Surname" #Surname class="placeholder-text" ></ion-input>
+            </ion-item>
+
+            <ion-item class="background1" >
+                <ion-input type="text" placeholder="Enter Employee Name" #Name class="placeholder-text" ></ion-input>
+              </ion-item>
+
+              <ion-item class="background1" >
+                  <ion-input type="text" placeholder="Enter Employee ID Number" #IdNumber class="placeholder-text" ></ion-input>
+                </ion-item>
+    
+            <ion-item class="background1" >
+                <ion-input type="text" placeholder="Enter Employee Position" #EmployeePosition  class="placeholder-text" ></ion-input>
+            </ion-item>
+
+            <ion-item class="background1" >
+              <input type="file" (change)="insertpic($event)" >
+            </ion-item>
+
+            <ion-item class="background1">
+                <button ion-button default (click)="employee(Surname.value,Name.value,IdNumber.value,EmployeePosition.value)">Add Employee</button>
+            </ion-item>
+
+            <ion-item class="background1" >
+                      <ion-list *ngFor="let a of employeeArray; let i = index">
+                          
+                            <ion-avatar item-start>
+                                <img [src]="a.picture" width="100" height="100">
+                                
+                            </ion-avatar>
+
+                            {{a.Surname}} {{a.Name}} {{a.IdNumber}} {{a.EmployeePosition}}
+                  <button ion-button default (click)="MethodDelete(i)" ><ion-icon ios="ios-trash" md="md-trash"></ion-icon>delete</button>
+                  <button ion-button default (click)="MethodEdit(i)" >Edit</button>
+                          
+                        </ion-list>
+                        
+                    
+                  
+          
+                 
+               
+          </ion-item>
+    
+        
+      </ion-list>
+
+
+
+      
+
+  </div>
+
 </ion-content>
